@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown di 3000 Anni</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #countdown {
+        font-size: 50px;
+        margin-top: 50px;
+    }
+   
+</style>
+<link href="css/style.css" rel="stylesheet">
+<link rel="icon" href="images/foglia.png" type="image/x-icon">
+</head>
+<body>
+
+<h1>Quest'area sarà presto disponibile</h1>
+<p>Stiamo facendo del nostro meglio per rendere questa pagina visibile al pubblico al più presto</p>
+<img src="images/miner.png"class="img-fluid">
+<div id="countdown"></div>
+<p1 id="demo"></p1>
+<p> <a href="index.html" class="product-link">torna alla home</a ></p >
+<script>
+    
+    var countDownDate = new Date("Jan 2, 2106 00:00:00").getTime();
+    
+   
+    var x = setInterval(function() {
+    
+   
+      var now = new Date().getTime();
+        
+      
+      var distance = countDownDate - now;
+        
+      
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+ 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
+
+</body>
+</html>
